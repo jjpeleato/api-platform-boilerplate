@@ -2,11 +2,10 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <title>API Platform Boilerplate</title>
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        <h1>Your lucky environment is {{ environment }}</h1>
+        <h3>APP Secret: {{ app_secret }}</h3>
     </body>
 </html>
