@@ -1,0 +1,87 @@
+############################
+# Ignore files/directories #
+############################
+/.idea
+/.env
+/.env.local
+/.env.local.php
+/.env.*.local
+/vendor/
+/node_modules
+/var/
+/public/assets/
+/public/bundles/
+/public/foo.php
+/public/humans.txt
+composer.lock
+symfony.lock
+package-lock.json
+yarn.lock
+yarn-error.log
+deploy.sh
+
+#############################
+# Logs, databases and misc. #
+#############################
+*.log
+*.sql
+*.sqlite
+*.sass-cache
+.bash_history
+.bash_logout
+.bashrc
+.cache
+.profile
+.mysql_history
+
+############
+# Packages #
+############
+*.7z
+*.dmg
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.bat
+
+###################
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+###################
+# Temporary files #
+###################
+*.swp
+*.swo
+*~
+
+######################
+# OS generated files #
+######################
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+*.lock
+
+######################
+# OS generated files #
+######################
+!private/sql/*.sql
+
+###> squizlabs/php_codesniffer ###
+/.phpcs-cache
+/phpcs.xml
+###< squizlabs/php_codesniffer ###
+
+###> lexik/jwt-authentication-bundle ###
+/config/jwt/*.pem
+###< lexik/jwt-authentication-bundle ###
