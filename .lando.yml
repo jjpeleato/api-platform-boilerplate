@@ -1,0 +1,70 @@
+name: apiplatform
+
+# See: https://docs.devwithlando.io/tutorials/lamp.html
+recipe: lamp
+config:
+    php: '7.3'
+    webroot: public
+    database: mariadb
+    xdebug: true
+    config:
+        php: private/config/php/php.ini
+
+# See: https://docs.devwithlando.io/config/proxy.html
+proxy:
+    appserver:
+        - web.apiplatform.lndo.site
+    node:
+        - node.apiplatform.lndo.site
+    database:
+        - db.apiplatform.lndo.site
+    mailhog:
+        - mail.apiplatform.lndo.site
+    pma:
+        - pma.apiplatform.lndo.site
+
+# See: https://docs.devwithlando.io/config/services.html
+services:
+    appserver:
+        run_as_root:
+            - "chown www-data: -R /app"
+    node:
+        type: node
+        globals:
+            npm: "latest"
+            yarn: "latest"
+            gulp-cli: "latest"
+    database:
+        portforward: 3308
+        creds:
+            user: lamp
+            password: lamp
+            database: lamp
+    mailhog:
+        type: mailhog
+        hogfrom:
+            - appserver
+        portforward: 1026
+    pma:
+        type: phpmyadmin
+        hosts: database
+
+# See: https://docs.devwithlando.io/config/tooling.html
+tooling:
+    node:
+        service: node
+    npm:
+        service: node
+    yarn:
+        service: node
+    gulp:
+        service: node
+    console:
+        service: appserver
+        cmd:
+            - "bin/console"
+    dep:
+        service: appserver
+        desription: run deployer commands
+        cmd:
+            - "vendor/bin/dep"
