@@ -9,6 +9,10 @@
     <file>src/</file>
     <file>public/index.php</file>
 
+    <!-- Exclude files or directories -->
+    <exclude-pattern>/config/bootstrap.php</exclude-pattern>
+    <exclude-pattern>/src/Kernel.php</exclude-pattern>
+
 	<!-- display progress -->
 	<arg name="colors"/>
 	<arg value="sp"/>
