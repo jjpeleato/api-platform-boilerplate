@@ -1,0 +1,14 @@
+.git/
+config/jwt/*
+config/packages/dev/
+config/packages/test/
+config/routes/dev/
+private/config/
+tests/
+var/*
+.editorconfig
+.env
+.gitignore
+.lando.yml
+deploy.sh
+deploy-exclude-list.txt

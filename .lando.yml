@@ -14,8 +14,6 @@ config:
 proxy:
     appserver:
         - web.apiplatform.lndo.site
-    node:
-        - node.apiplatform.lndo.site
     database:
         - db.apiplatform.lndo.site
     mailhog:
@@ -28,12 +26,6 @@ services:
     appserver:
         run_as_root:
             - "chown www-data: -R /app"
-    node:
-        type: node
-        globals:
-            npm: "latest"
-            yarn: "latest"
-            gulp-cli: "latest"
     database:
         portforward: 3308
         creds:
@@ -51,14 +43,6 @@ services:
 
 # See: https://docs.devwithlando.io/config/tooling.html
 tooling:
-    node:
-        service: node
-    npm:
-        service: node
-    yarn:
-        service: node
-    gulp:
-        service: node
     console:
         service: appserver
         cmd:
