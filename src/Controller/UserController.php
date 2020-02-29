@@ -16,11 +16,11 @@ class UserController
 {
     /**
      * @Route(
-     *     name="api_user_employees_post",
-     *     path="/user_employees",
+     *     name="api_users_post",
+     *     path="/users",
      *     methods={"POST"},
      *     defaults={
-     *         "_api_resource_class"=UserEmployee::class,
+     *         "_api_resource_class"=User::class,
      *         "_api_collection_operation_name"="post"
      *     }
      * )
@@ -35,8 +35,8 @@ class UserController
 
     /**
      * @Route(
-     *     name="api_user_employees_put",
-     *     path="/user_employees/{id}",
+     *     name="api_users_put",
+     *     path="/users/{id}",
      *     requirements={"id"="\d+"},
      *     methods={"PUT"},
      *     defaults={

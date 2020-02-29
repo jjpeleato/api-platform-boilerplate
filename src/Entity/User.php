@@ -28,11 +28,17 @@ use function strtoupper;
  *     },
  *     collectionOperations={
  *         "get"={"access_control"="is_granted('ROLE_ADMIN')"},
- *         "post"={"access_control"="is_granted('ROLE_ADMIN')"}
+ *         "post"={
+ *             "route_name"="api_users_post",
+ *             "access_control"="is_granted('ROLE_ADMIN')"
+ *         }
  *     },
  *     itemOperations={
  *         "get"={"access_control"="is_granted('ROLE_ADMIN')"},
- *         "put"={"access_control"="is_granted('ROLE_ADMIN')"},
+ *         "put"={
+ *             "route_name"="api_users_put",
+ *             "access_control"="is_granted('ROLE_ADMIN')"
+ *         },
  *         "delete"={"access_control"="is_granted('ROLE_ADMIN')"}
  *     }
  * )
